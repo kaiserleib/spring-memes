@@ -1,7 +1,5 @@
 package memes.services;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public interface ImageManipulationService {
     /**
      * Captions an image file

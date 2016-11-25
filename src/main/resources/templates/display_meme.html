@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SoFi Memes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Meme</h1>
+    <p th:text="'id: ' + ${meme.id}" />
+    <p th:text="'topText ' + ${meme.topText}" />
+    <p th:text="'bottomText ' + ${meme.bottomText}" />
+    <a href="/meme">Submit another meme</a>
+</body>
+</html>

@@ -6,3 +6,8 @@ There's some form handling, man, and thymeleaf templating, and if I don't go all
 
 # no srsly why
 Different project, different framework.
+
+# where did you copy paste this from
+https://spring.io/guides/gs/handling-form-submission/
+
+https://spring.io/guides/gs/uploading-files/

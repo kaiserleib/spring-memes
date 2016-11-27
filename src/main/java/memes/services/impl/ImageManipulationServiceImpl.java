@@ -14,34 +14,36 @@ import java.io.IOException;
 public class ImageManipulationServiceImpl implements ImageManipulationService {
 
     private StorageService storageService;
+    
     @Autowired
     public ImageManipulationServiceImpl(StorageService storageService) {
         this.storageService = storageService;
     }
+    
     @Override
     public void caption(String fileName, String topText, String bottomText) {
         ConvertCmd cmd = new ConvertCmd();
 
         IMOperation top = new IMOperation();
         top.addImage(this.storageService.load(fileName).toString());
-        top.pointsize(70); //size of text
-        top.font("Impact"); // font
-        top.fill("White"); //font color
+        top.pointsize(70);
+        top.font("Impact");
+        top.fill("White");
         top.stroke("Black");
         top.strokewidth(2);
         top.gravity("north");
 
-        top.draw("gravity north text 0,0 '"+ topText + "'"); // location of text, actual text
+        top.draw("gravity north text 0,0 '"+ topText + "'");
         top.addImage(this.storageService.load(fileName).toString());
 
         IMOperation bot = new IMOperation();
         bot.addImage(this.storageService.load(fileName).toString());
-        bot.pointsize(70); //size of text
-        bot.font("Impact"); // font
-        bot.fill("White"); //font color
+        bot.pointsize(70);
+        bot.font("Impact");
+        bot.fill("White");
         bot.stroke("Black");
         bot.strokewidth(2);
-        bot.draw("gravity south text 0,0 '"+ bottomText + "'"); // location of text, actual text
+        bot.draw("gravity south text 0,0 '"+ bottomText + "'");
         bot.addImage(this.storageService.load(fileName).toString());
 
         try {
@@ -57,9 +59,5 @@ public class ImageManipulationServiceImpl implements ImageManipulationService {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
     }
-
-
-
 }
